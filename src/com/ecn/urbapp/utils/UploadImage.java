@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 
 public class UploadImage extends Activity {
 

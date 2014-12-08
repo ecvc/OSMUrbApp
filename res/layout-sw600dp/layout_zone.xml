@@ -36,7 +36,7 @@
 			android:layout_height="fill_parent"
 			android:layout_alignParentTop="true"
 			android:layout_toRightOf="@+id/zone_button_back"
-			android:text="@string/cancel" />
+			android:text="@android:string/cancel" />
 	
 		<Button
 			android:id="@+id/zone_button_validate"

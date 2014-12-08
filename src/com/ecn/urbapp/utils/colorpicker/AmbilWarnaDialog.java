@@ -17,7 +17,7 @@ import android.graphics.*;
 import android.view.*;
 import android.widget.*;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 
 /**
  * This class is used to create a number picker dialog

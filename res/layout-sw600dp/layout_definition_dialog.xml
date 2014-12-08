@@ -86,6 +86,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/definition_color_linear_layout"
             android:layout_alignRight="@+id/definition_color_linear_layout"
-            android:text="@string/validate" />
+            android:text="@android:string/ok" />
 
 </RelativeLayout>

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -32,7 +33,6 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.ecn.urbapp.R;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.Project;
@@ -40,6 +40,7 @@ import com.ecn.urbapp.dialogs.NbPointsGeoDialog;
 import com.ecn.urbapp.utils.ConvertGeom;
 import com.ecn.urbapp.utils.GetId;
 import com.ecn.urbapp.utils.MarkerPos;
+import com.example.osmurbapp.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -66,7 +67,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
 * @author Sébastien
 *
 */
-public class GeoActivity extends Activity implements GooglePlayServicesClient.ConnectionCallbacks,
+@SuppressLint("NewApi") public class GeoActivity extends Activity implements GooglePlayServicesClient.ConnectionCallbacks,
 													 GooglePlayServicesClient.OnConnectionFailedListener,
 													 OnClickListener{
 
@@ -157,7 +158,7 @@ public class GeoActivity extends Activity implements GooglePlayServicesClient.Co
 	* @author Sebastien
 	*
 	*/
-	public static class ErrorDialogFragment extends DialogFragment {
+	@SuppressLint("NewApi") public static class ErrorDialogFragment extends DialogFragment {
 	    // Global field to contain the error dialog
 	    private Dialog mDialog;
 	    

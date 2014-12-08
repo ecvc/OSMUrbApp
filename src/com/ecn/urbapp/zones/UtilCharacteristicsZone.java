@@ -44,7 +44,7 @@ import java.util.Vector;
 import android.content.res.Resources;
 import android.graphics.Point;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.ElementType;

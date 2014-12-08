@@ -1,5 +1,6 @@
 package com.ecn.urbapp.dialogs;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
@@ -8,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 
 /**
  * This class creates the dialog that ask the user to choose the characteristics of the
@@ -17,7 +18,7 @@ import com.ecn.urbapp.R;
  * @author Jules Party
  * 
  */
-public class TopologyExceptionDialogFragment extends DialogFragment {
+@SuppressLint("NewApi") public class TopologyExceptionDialogFragment extends DialogFragment {
 
 	private Dialog box;
 	private Button bpok;

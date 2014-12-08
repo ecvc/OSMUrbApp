@@ -35,6 +35,7 @@ knowledge of the CeCILL license and that you accept its terms.
 
 package com.ecn.urbapp.dialogs;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
@@ -43,7 +44,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.fragments.ZoneFragment;
 
@@ -53,7 +54,7 @@ import com.ecn.urbapp.fragments.ZoneFragment;
  * @author Jules Party
  * 
  */
-public class AddZoneDialogFragment extends DialogFragment {
+@SuppressLint("NewApi") public class AddZoneDialogFragment extends DialogFragment {
 
 	/**
 	 * The Dialog instance that allows the user to choose how to insert new PixelGeoms.

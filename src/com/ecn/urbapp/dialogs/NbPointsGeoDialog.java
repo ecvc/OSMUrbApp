@@ -1,12 +1,13 @@
 package com.ecn.urbapp.dialogs;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.GeoActivity;
 import com.ecn.urbapp.activities.MainActivity;
 
@@ -15,7 +16,7 @@ import com.ecn.urbapp.activities.MainActivity;
  * @author Sebastien
  *
  */
-public class NbPointsGeoDialog extends DialogFragment{
+@SuppressLint("NewApi") public class NbPointsGeoDialog extends DialogFragment{
 	
 	public Boolean choosed=false;
 	public static int selected = 0;

@@ -35,6 +35,7 @@ knowledge of the CeCILL license and that you accept its terms.
 
 package com.ecn.urbapp.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -44,7 +45,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.PixelGeom;
@@ -56,7 +57,7 @@ import com.ecn.urbapp.zones.UtilCharacteristicsZone;
  * @author Jules Party
  * 
  */
-public class RecapCharactFragment extends Fragment {
+@SuppressLint("NewApi") public class RecapCharactFragment extends Fragment {
 	
 	private long pgeomIdToSelect;
 	

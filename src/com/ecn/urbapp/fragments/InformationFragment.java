@@ -1,5 +1,6 @@
 package com.ecn.urbapp.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +15,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Composed;
 import com.ecn.urbapp.db.Project;
@@ -33,7 +34,7 @@ import com.ecn.urbapp.dialogs.NbPointsGeoDialog;
  * 			
  */
 
-public class InformationFragment extends Fragment implements OnClickListener, OnCheckedChangeListener{
+@SuppressLint("NewApi") public class InformationFragment extends Fragment implements OnClickListener, OnCheckedChangeListener{
 
 	/**
 	 * Button launching the geolocalisation activity. It change of state once the photo is linked with a GpsGeom.

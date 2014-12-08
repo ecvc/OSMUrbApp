@@ -35,7 +35,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.LoadExternalProjectsActivity;
 import com.ecn.urbapp.activities.LoadLocalProjectsActivity;
 import com.ecn.urbapp.activities.MainActivity;
@@ -59,7 +59,7 @@ import com.ecn.urbapp.utils.Utils;
  * 			
  */
 
-@SuppressLint("SimpleDateFormat")
+@SuppressLint({ "SimpleDateFormat", "NewApi" })
 public class HomeFragment extends Fragment implements OnClickListener{
 
 	/**

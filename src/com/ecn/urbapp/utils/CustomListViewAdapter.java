@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
  
 /**
  * Configures the view of photos in Local/External loading

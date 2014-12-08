@@ -2,6 +2,7 @@ package com.ecn.urbapp.fragments;
 
 import java.util.Vector;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.res.Resources;
 import android.graphics.Matrix;
@@ -21,7 +22,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.PixelGeom;
@@ -45,7 +46,7 @@ import com.ecn.urbapp.zones.UtilCharacteristicsZone;
  * This is the fragment used to define the differents characteristics of the zone.
  * 			
  */
-public class CharacteristicsFragment extends Fragment {
+@SuppressLint("NewApi") public class CharacteristicsFragment extends Fragment {
 
 	/** Image containing the photo and to drawing of the zones */
 	private static ImageView myImage = null;

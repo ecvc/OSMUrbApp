@@ -14,7 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.ElementType;
 import com.ecn.urbapp.db.Material;
@@ -30,7 +30,7 @@ import com.ecn.urbapp.zones.UtilCharacteristicsZone;
  * @author Jules Party
  * 
  */
-public class CharacteristicsDialogFragment extends DialogFragment {
+@SuppressLint("NewApi") public class CharacteristicsDialogFragment extends DialogFragment {
 
 	/**
 	 * The Dialog instance that allow the user to characterize Elements.

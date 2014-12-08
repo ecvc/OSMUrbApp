@@ -3,6 +3,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
@@ -18,7 +19,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.Toast;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.db.Composed;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.ElementType;
@@ -56,7 +57,7 @@ import com.ecn.urbapp.utils.Utils;
 //TODO pass photo into data bundle
 //TODO verify for the local save
 
-public class MainActivity extends Activity {
+@SuppressLint("NewApi") public class MainActivity extends Activity {
 
 	/**
 	 * Attribut represent the action bar of the application

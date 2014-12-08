@@ -3,6 +3,7 @@ package com.ecn.urbapp.fragments;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.res.Resources;
 import android.graphics.Matrix;
@@ -23,7 +24,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.PixelGeom;
@@ -53,7 +54,7 @@ import com.vividsolutions.jts.io.ParseException;
  * This is the fragment used to define the different zones.
  */
 
-public class ZoneFragment extends Fragment implements OnClickListener, OnTouchListener{
+@SuppressLint("NewApi") public class ZoneFragment extends Fragment implements OnClickListener, OnTouchListener{
 	
 	/**
 	 * Constant field defining the radius tolerance on touch reference, in pixels

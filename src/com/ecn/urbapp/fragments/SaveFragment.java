@@ -2,6 +2,7 @@ package com.ecn.urbapp.fragments;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Composed;
 import com.ecn.urbapp.db.Element;
@@ -40,7 +41,7 @@ import com.ecn.urbapp.syncToExt.Sync;
  */
 
 
-public class SaveFragment extends Fragment{
+@SuppressLint("NewApi") public class SaveFragment extends Fragment{
 	
 
 	private Button saveToLocal = null;

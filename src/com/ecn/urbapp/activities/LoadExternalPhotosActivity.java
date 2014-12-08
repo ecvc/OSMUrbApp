@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
@@ -15,7 +16,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.ecn.urbapp.R;
 import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.Photo;
 import com.ecn.urbapp.syncToExt.Sync;
@@ -25,6 +25,7 @@ import com.ecn.urbapp.utils.ImageDownloader;
 import com.ecn.urbapp.utils.MathOperation;
 import com.ecn.urbapp.utils.RowItem;
 import com.ecn.urbapp.utils.Utils;
+import com.example.osmurbapp.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
@@ -36,7 +37,7 @@ import com.google.android.gms.maps.model.Marker;
  * @author Sebastien
  *
  */
-public class LoadExternalPhotosActivity extends Activity{
+@SuppressLint("NewApi") public class LoadExternalPhotosActivity extends Activity{
 	/**
 	 * Contains all the projects attributes
 	 */

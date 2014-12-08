@@ -37,6 +37,7 @@ package com.ecn.urbapp.dialogs;
 
 import java.util.Vector;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
@@ -45,7 +46,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.PixelGeom;
@@ -60,7 +61,7 @@ import com.vividsolutions.jts.io.ParseException;
  * @author Jules Party
  * 
  */
-public class UnionDialogFragment extends DialogFragment {
+@SuppressLint("NewApi") public class UnionDialogFragment extends DialogFragment {
 
 	/**
 	 * The Dialog instance that allows the user to group Elements.

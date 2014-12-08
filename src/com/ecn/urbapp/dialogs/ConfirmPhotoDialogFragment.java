@@ -2,6 +2,7 @@ package com.ecn.urbapp.dialogs;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
@@ -10,7 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.ecn.urbapp.R;
+import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Composed;
 import com.ecn.urbapp.db.Element;
@@ -25,7 +26,7 @@ import com.ecn.urbapp.db.Project;
  * @author Jules Party
  * 
  */
-public class ConfirmPhotoDialogFragment extends DialogFragment {
+@SuppressLint("NewApi") public class ConfirmPhotoDialogFragment extends DialogFragment {
 
 	//TODO Adddescription for javadoc
 	private Dialog box;
