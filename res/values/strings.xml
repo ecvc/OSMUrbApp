@@ -43,5 +43,31 @@
     <string name="delete_zone">delete_zone</string>
     <string name="zone_create_intersect">zone_create_intersect</string>
     <string name="zone_create_add">zone_create_add</string>
+    <string name="homeFragment">homeFragment</string>
+    <string name="informationFragment">informationFragment</string>
+    <string name="zoneFragment">zoneFragment</string>
+    <string name="definitionFragment">definitionFragment</string>
+    <string name="saveFragment">saveFragment</string>
+    <string name="zone_create_dialog">zone_create_dialog</string>
+    <string name="definition_dialog_title">definition_dialog_title</string>
+    <string name="type">type</string>
+    <string name="materials">materials</string>
+    <string name="nullString">nullString</string>
+    <string name="confirm_photo">confirm_photo</string>
+    <string name="dialog_request_nbPoint">dialog_request_nbPoint</string>
+    <string name="sol">sol</string>
+    <string name="facade">facade</string>
+    <string name="topology_exception">topology_exception</string>
+    <string name="no_back">no_back</string>
+    <string name="point_deleting_impossible">point_deleting_impossible</string>
+    <string name="validation_not_available">validation_not_available</string>
+    <string name="progress_dialog_title_connecting">progress_dialog_title_connecting</string>
+    <string name="upload_error_title">upload_error_title</string>
+    <string name="upload_error_message">upload_error_message</string>
+    <string name="retry">retry</string>
+    <string name="upload_success_title">upload_success_title</string>
+    <string name="upload_success_message">upload_success_message</string>
+    <string name="success">success</string>
+    <string name="progress_dialog_title_uploading">progress_dialog_title_uploading</string>
     
 </resources>
