@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.osmdroid.api.Marker;
+import org.osmdroid.util.Position;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -24,11 +27,11 @@ import com.ecn.urbapp.db.Project;
 import com.ecn.urbapp.syncToExt.Sync;
 import com.ecn.urbapp.utils.ConvertGeom;
 import com.ecn.urbapp.utils.MathOperation;
-import com.google.android.gms.maps.GoogleMap;
+/*import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.Marker;*/
 
 /**
  * 
@@ -116,14 +119,14 @@ import com.google.android.gms.maps.model.Marker;
    				Intent i = new Intent(getApplicationContext(), LoadExternalPhotosActivity.class);
    				i.putExtra("SELECTED_PROJECT_ID", refreshedValues.get(projectMarkers.get(marker.getId())).getProjectId());
    				
-   				ArrayList<LatLng> coordProjet = new ArrayList<LatLng>();
+   				ArrayList<Position> coordProjet = new ArrayList<Position>();
 
    					for(GpsGeom gg : allGpsGeom){
    		        		if(refreshedValues.get(projectMarkers.get(marker.getId())).getGpsGeom_id()==gg.getGpsGeomsId()){
    		        			coordProjet.addAll(ConvertGeom.gpsGeomToLatLng(gg));
    		        		}
    					}
-   				i.putExtra("PROJECT_COORD", ConvertGeom.latLngToGpsGeom(coordProjet));
+   				i.putExtra("PROJECT_COORD", ConvertGeom.PositionToGpsGeom(coordProjet));
    				startActivityForResult(i, 1);
    				
             }
@@ -157,7 +160,7 @@ import com.google.android.gms.maps.model.Marker;
          */
         Integer i = Integer.valueOf(0);
         for (Project enCours:refreshedValues){
-			LatLng coordProjet = null;
+			Position coordProjet = null;
         	for(GpsGeom gg : allGpsGeom){
         		if(enCours.getGpsGeom_id()==gg.getGpsGeomsId()){
         			coordProjet =  MathOperation.barycenter(ConvertGeom.gpsGeomToLatLng(gg));
@@ -182,7 +185,7 @@ import com.google.android.gms.maps.model.Marker;
     {
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View v, int position, long id) {
-			LatLng coordProjet = null;
+			Position coordProjet = null;
         	for(GpsGeom gg : allGpsGeom){
         		if(refreshedValues.get(position).getGpsGeom_id()==gg.getGpsGeomsId()){
         			coordProjet =  MathOperation.barycenter(ConvertGeom.gpsGeomToLatLng(gg));

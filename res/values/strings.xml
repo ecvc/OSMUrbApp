@@ -3,6 +3,7 @@
 
     <string name="app_name">UrbApp</string>
     <string name="action_settings">Settings</string>
+    <string name="valid">Valider</string>
     <string name="homeFragment">Home</string>
     <string name="definitionFragment">Caractérisation des zones</string>
     <string name="saveFragment">Sauvegarde et synchronisation</string>
