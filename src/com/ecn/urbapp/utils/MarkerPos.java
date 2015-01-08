@@ -1,7 +1,9 @@
 package com.ecn.urbapp.utils;
 
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
+import org.osmdroid.api.Marker;
+import org.osmdroid.util.Position;
+
+
 
 /**
 * Defines a mix of differents objects, needed for the Async method
@@ -17,12 +19,12 @@ public class MarkerPos {
 	//TODO Adddescription for javadoc
         private Marker marker;
     	//TODO Adddescription for javadoc
-        private LatLng position;
+        private Position position;
     	//TODO Adddescription for javadoc
         private String adresse="Adresse inconnue";
 
     	//TODO Adddescription for javadoc
-        public MarkerPos(Marker marker, LatLng position) {
+        public MarkerPos(Marker marker, Position position) {
                 super();
                 this.marker = marker;
                 this.position = position;
@@ -45,11 +47,11 @@ public class MarkerPos {
                 this.marker = marker;
         }
     	//TODO Adddescription for javadoc
-        public LatLng getPosition() {
+        public Position getPosition() {
                 return position;
         }
     	//TODO Adddescription for javadoc
-        public void setPosition(LatLng position) {
+        public void setPosition(Position position) {
                 this.position = position;
         }
 

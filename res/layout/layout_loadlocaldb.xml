@@ -58,7 +58,7 @@
          android:layout_width="0dp"
          android:layout_weight="1"
          android:layout_height="match_parent"
-         android:name="com.google.android.gms.maps.MapFragment"/>
+         android:name="org.osmdroid.views..MapFragment"/>
         </LinearLayout>
         
 

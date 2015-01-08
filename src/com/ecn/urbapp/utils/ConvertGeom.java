@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.osmdroid.util.Position;
+
 import android.graphics.Point;
 
 import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.PixelGeom;
 import com.ecn.urbapp.zones.UtilCharacteristicsZone;
 import com.ecn.urbapp.zones.Zone;
-import com.google.android.gms.maps.model.LatLng;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.Polygon;
@@ -46,25 +47,25 @@ public class ConvertGeom{
 		return zone.getPolygon().toText();
 	}
 	
-	public static ArrayList<LatLng> gpsGeomToLatLng(GpsGeom the_geom){
-		ArrayList<LatLng> list = new ArrayList<LatLng>();
+	public static ArrayList<Position> gpsGeomToLatLng(GpsGeom the_geom){
+		ArrayList<Position> list = new ArrayList<Position>();
 
 		String s = the_geom.getGpsGeomCord().replace("LINESTRING(", "");
 		s = s.replace(")", "");
 		ArrayList<String> tab = new ArrayList<String>(Arrays.asList(s.split(",")));
 		for(String str : tab){
 			//TODO debug
-			list.add(new LatLng(Double.parseDouble(str.split(" ")[0]), Double.parseDouble(str.split(" ")[1])));
+			list.add(new Position(Double.parseDouble(str.split(" ")[0]), Double.parseDouble(str.split(" ")[1])));
 		}
 		return list;
 	}
 	
-	public static String latLngToGpsGeom(ArrayList<LatLng> list){
+	public static String latLngToGpsGeom(ArrayList<Position> list){
 		String ret="LINESTRING(";
 		
 		String s="";
-		for(LatLng ll : list){
-			s+=ll.latitude+" "+ll.longitude;
+		for(Position ll : list){
+			s+=ll.getLatitude()+" "+ll.getLongitude();
 			if(list.get(list.size()-1)!=ll){
 				s+=",";
 			}
