@@ -35,12 +35,23 @@ knowledge of the CeCILL license and that you accept its terms.
 
 package com.ecn.urbapp.dialogs;
 
-import com.ecn.urbapp.activities.MainActivity;
+import java.util.Vector;
+
+import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.net.ParseException;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.PixelGeom;
 import com.ecn.urbapp.fragments.CharacteristicsFragment;
-import com.ecn.urbapp.fragments.ZoneFragment;
 import com.ecn.urbapp.zones.UtilCharacteristicsZone;
+import com.example.osmurbapp.R;
 
 /**
  * This class creates the dialog that indicate which pixelgeoms is not defined

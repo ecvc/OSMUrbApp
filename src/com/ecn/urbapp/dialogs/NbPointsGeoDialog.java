@@ -1,7 +1,16 @@
 package com.ecn.urbapp.dialogs;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+
 import com.ecn.urbapp.activities.GeoActivity;
 import com.ecn.urbapp.activities.MainActivity;
+import com.example.osmurbapp.R;
 
 /**
  * Dialog for the choice of number of points to put in GpsGeom

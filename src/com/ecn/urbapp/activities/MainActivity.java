@@ -1,4 +1,22 @@
 package com.ecn.urbapp.activities;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Vector;
+
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Fragment;
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.widget.Toast;
+
 import com.ecn.urbapp.db.Composed;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.ElementType;
@@ -18,6 +36,7 @@ import com.ecn.urbapp.syncToExt.Sync;
 import com.ecn.urbapp.utils.ConnexionCheck;
 import com.ecn.urbapp.utils.Cst;
 import com.ecn.urbapp.utils.Utils;
+import com.example.osmurbapp.R;
 
 /**
  * @author	COHENDET Sébastien

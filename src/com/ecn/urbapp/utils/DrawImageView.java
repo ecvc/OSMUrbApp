@@ -35,10 +35,22 @@ knowledge of the CeCILL license and that you accept its terms.
 
 package com.ecn.urbapp.utils;
 
+import android.app.Notification.Style;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.net.ParseException;
+
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.PixelGeom;
 import com.ecn.urbapp.zones.UtilCharacteristicsZone;
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.Polygon;
+import com.vividsolutions.jts.io.WKTReader;
 
 /**
  * This class is used to draw the zones on the image

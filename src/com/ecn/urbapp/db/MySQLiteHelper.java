@@ -1,5 +1,10 @@
 package com.ecn.urbapp.db;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
 		/**

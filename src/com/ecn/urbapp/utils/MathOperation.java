@@ -1,5 +1,9 @@
 package com.ecn.urbapp.utils;
 
+import java.util.ArrayList;
+
+import org.osmdroid.util.Position;
+
 /**
  * Many static methods useful 
  * @author Sebastien

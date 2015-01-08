@@ -1,14 +1,50 @@
 package com.ecn.urbapp.fragments;
 
+import java.io.File;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Attr;
+
+import android.annotation.SuppressLint;
+import android.app.Fragment;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.DocumentsContract.Document;
+import android.provider.MediaStore;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import com.ecn.urbapp.activities.LoadExternalProjectsActivity;
 import com.ecn.urbapp.activities.LoadLocalProjectsActivity;
 import com.ecn.urbapp.activities.MainActivity;
+import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.ElementType;
 import com.ecn.urbapp.db.Material;
 import com.ecn.urbapp.db.MySQLiteHelper;
 import com.ecn.urbapp.syncToExt.Sync;
 import com.ecn.urbapp.utils.Cst;
 import com.ecn.urbapp.utils.Utils;
+import com.example.osmurbapp.R;
 
 
 /**

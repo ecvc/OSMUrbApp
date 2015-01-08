@@ -1,5 +1,10 @@
 package com.ecn.urbapp.db;
 
+import java.util.ArrayList;
+
+import android.content.ContentValues;
+import android.database.Cursor;
+
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.syncToExt.Sync;
 
@@ -223,7 +228,6 @@ public class Photo extends DataObject  {
 
 	//Override methods
 	@Override
-	@Override
 	public String toString() {
 		return "Photo [photo_id=" + photo_id + ", photo_description="
 				+ photo_description + ", photo_author=" + photo_author
@@ -231,7 +235,6 @@ public class Photo extends DataObject  {
 				+ "]";
 	}
 
-	@Override
 	@Override
 	public void saveToLocal(LocalDataSource datasource) {
 		ContentValues values = new ContentValues(); 

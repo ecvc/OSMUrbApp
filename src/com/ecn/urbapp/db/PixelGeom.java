@@ -1,5 +1,11 @@
 package com.ecn.urbapp.db;
 
+import java.util.ArrayList;
+import java.util.Vector;
+
+import android.content.ContentValues;
+import android.database.Cursor;
+
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.syncToExt.Sync;
 
@@ -77,13 +83,11 @@ public class PixelGeom extends DataObject  {
 	
 	//Override methods
 	@Override
-	@Override
 	public String toString() {
 		return "pixelGeom_id =" + this.pixelGeom_id + "&" + "\ncoord =" + this.pixelGeom_the_geom ;
 		
 	}
 
-	@Override
 	@Override
 	public void saveToLocal(LocalDataSource datasource) {
 		ContentValues values = new ContentValues(); 

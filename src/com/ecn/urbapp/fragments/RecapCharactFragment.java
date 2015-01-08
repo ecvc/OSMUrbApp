@@ -35,10 +35,21 @@ knowledge of the CeCILL license and that you accept its terms.
 
 package com.ecn.urbapp.fragments;
 
+import android.annotation.SuppressLint;
+import android.app.Fragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.PixelGeom;
 import com.ecn.urbapp.zones.UtilCharacteristicsZone;
+import com.example.osmurbapp.R;
 
 /**
  * This class creates the dialog that indicate which pixelgeoms is not defined

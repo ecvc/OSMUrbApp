@@ -1,5 +1,21 @@
 package com.ecn.urbapp.utils;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.concurrent.ExecutionException;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.HttpGet;
+
+import android.net.http.AndroidHttpClient;
+import android.os.AsyncTask;
+import android.os.Environment;
+import android.util.Log;
+
 /**
  * Download a picture from the web and prints it on screen
  * @author Sebastien

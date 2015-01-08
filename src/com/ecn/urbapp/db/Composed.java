@@ -1,5 +1,7 @@
 package com.ecn.urbapp.db;
 
+import android.content.ContentValues;
+
 public class Composed extends DataObject{
 
 	//Attributes
@@ -53,7 +55,6 @@ public class Composed extends DataObject{
 	
 	//Override Methods
 	@Override
-	@Override
 	public String toString() {
 		return "Composed [project_id=" + project_id + ", photo_id=" + photo_id
 				+ "]";
@@ -61,7 +62,6 @@ public class Composed extends DataObject{
 
 
 
-	@Override
 	@Override
 	public void saveToLocal(LocalDataSource datasource) {
 		ContentValues values = new ContentValues(); 

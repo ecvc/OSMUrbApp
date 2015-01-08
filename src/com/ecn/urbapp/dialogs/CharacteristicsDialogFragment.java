@@ -1,5 +1,20 @@
 package com.ecn.urbapp.dialogs;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.ElementType;
 import com.ecn.urbapp.db.Material;
@@ -7,6 +22,7 @@ import com.ecn.urbapp.fragments.CharacteristicsFragment;
 import com.ecn.urbapp.utils.colorpicker.AmbilWarnaDialog;
 import com.ecn.urbapp.utils.colorpicker.AmbilWarnaDialog.OnAmbilWarnaListener;
 import com.ecn.urbapp.zones.UtilCharacteristicsZone;
+import com.example.osmurbapp.R;
 
 /**
  * This class creates the dialog that ask the user to choose the characteristics of the
@@ -146,7 +162,6 @@ import com.ecn.urbapp.zones.UtilCharacteristicsZone;
 	 */
 	OnAmbilWarnaListener colorListener = new OnAmbilWarnaListener() {
 		@Override
-		@Override
 		public void onOk(AmbilWarnaDialog dialog, int color) {
 			// Modify the color of the zone
 			chosenColor = color;
@@ -154,7 +169,6 @@ import com.ecn.urbapp.zones.UtilCharacteristicsZone;
 			colorView.setBackgroundColor(color);
 		}
 
-		@Override
 		@Override
 		public void onCancel(AmbilWarnaDialog dialog) {
 		}

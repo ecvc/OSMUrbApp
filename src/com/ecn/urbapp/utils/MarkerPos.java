@@ -1,5 +1,8 @@
 package com.ecn.urbapp.utils;
->>>>>>> c95bdb4944817760086e9fb7ea10520690d902dd
+
+import org.osmdroid.api.Marker;
+import org.osmdroid.util.Position;
+
 
 /**
 * Defines a mix of differents objects, needed for the Async method

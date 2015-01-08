@@ -1,5 +1,14 @@
 package com.ecn.urbapp.utils;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import android.app.Activity;
+import android.net.ConnectivityManager;
+import android.os.AsyncTask;
+import android.util.Log;
+
 import com.ecn.urbapp.activities.MainActivity;
 
 public class ConnexionCheck {

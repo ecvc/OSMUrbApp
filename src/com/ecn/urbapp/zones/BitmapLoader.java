@@ -7,6 +7,10 @@ http://developer.android.com/training/displaying-bitmaps/load-bitmap.html
 
 package com.ecn.urbapp.zones;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
+
 /**
  * This class is used to resized a photo before opening it because of the memory
  * limitation of android applications.

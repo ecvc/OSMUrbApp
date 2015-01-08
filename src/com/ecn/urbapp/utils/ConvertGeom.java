@@ -1,9 +1,21 @@
 package com.ecn.urbapp.utils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import org.osmdroid.util.Position;
+
+import android.graphics.Point;
+import android.net.ParseException;
+
 import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.PixelGeom;
 import com.ecn.urbapp.zones.UtilCharacteristicsZone;
 import com.ecn.urbapp.zones.Zone;
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.Polygon;
+import com.vividsolutions.jts.io.WKTReader;
 
 public class ConvertGeom{
 

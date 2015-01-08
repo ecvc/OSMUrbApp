@@ -1,5 +1,10 @@
 package com.ecn.urbapp.db;
 
+import java.util.Vector;
+
+import android.content.ContentValues;
+import android.database.Cursor;
+
 import com.ecn.urbapp.syncToExt.Sync;
 
 public class Element extends DataObject {
@@ -197,7 +202,6 @@ public class Element extends DataObject {
 	//Abstract methods
 	
 	@Override
-	@Override
 	public String toString() {
 		return "Element [element_id=" + element_id + ", photo_id=" + photo_id
 				+ ", material_id=" + material_id + ", elementType_id="
@@ -207,7 +211,6 @@ public class Element extends DataObject {
 	}
 
 
-	@Override
 	@Override
 	public void saveToLocal(LocalDataSource datasource) {
 		ContentValues values = new ContentValues(); 

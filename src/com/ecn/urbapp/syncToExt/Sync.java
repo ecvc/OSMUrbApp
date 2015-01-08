@@ -1,5 +1,35 @@
 package com.ecn.urbapp.syncToExt;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Context;
+import android.os.AsyncTask;
+import android.os.Environment;
+import android.util.Log;
+import android.widget.Toast;
+
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Composed;
 import com.ecn.urbapp.db.Element;
@@ -11,6 +41,7 @@ import com.ecn.urbapp.db.PixelGeom;
 import com.ecn.urbapp.db.Project;
 import com.ecn.urbapp.fragments.HomeFragment;
 import com.ecn.urbapp.fragments.SaveFragment;
+import com.google.gson.Gson;
 
 /**
  * All the maters of 

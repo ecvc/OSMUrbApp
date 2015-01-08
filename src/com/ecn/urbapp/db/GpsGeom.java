@@ -1,5 +1,10 @@
 package com.ecn.urbapp.db;
 
+import java.util.ArrayList;
+
+import android.content.ContentValues;
+import android.database.Cursor;
+
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.syncToExt.Sync;
 
@@ -16,7 +21,7 @@ public class GpsGeom extends DataObject{
 	 */
 	private String gpsGeom_the_geom;
 	/**
-	 * Field containing the addressof the GpsGeom.
+	 * Field containing the address of the GpsGeom.
 	 */
 	private String gpsGeom_address;
 
@@ -76,13 +81,11 @@ public class GpsGeom extends DataObject{
 	
 	//Ovveride methods
 	@Override
-	@Override
 	public String toString() {
 		return "gpsGeom_id =" + this.gpsGeom_id + "&" + "\n gpsGeom_the_geom =" + this.gpsGeom_the_geom  + "&" + "\n coord =" + this.gpsGeom_id;
 		
 	}
 
-	@Override
 	@Override
 	public void saveToLocal(LocalDataSource datasource) {
 		ContentValues values = new ContentValues(); 
