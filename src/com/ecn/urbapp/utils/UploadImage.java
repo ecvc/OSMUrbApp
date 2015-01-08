@@ -1,26 +1,5 @@
 package com.ecn.urbapp.utils;
 
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-
-import com.example.osmurbapp.R;
-
 public class UploadImage extends Activity {
 
 	/** The captured image file. Get it's path from the starting intent */

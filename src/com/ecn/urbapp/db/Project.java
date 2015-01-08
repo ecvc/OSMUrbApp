@@ -1,10 +1,5 @@
 package com.ecn.urbapp.db;
 
-import java.util.ArrayList;
-
-import android.content.ContentValues;
-import android.database.Cursor;
-
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.syncToExt.Sync;
 
@@ -101,10 +96,12 @@ public class Project extends DataObject {
 
 	//Override methods
 	@Override
+	@Override
 	public String toString() {
 		return project_name;
 	}
 
+	@Override
 	@Override
 	public void saveToLocal(LocalDataSource datasource) {
 		ContentValues values = new ContentValues(); 

@@ -1,22 +1,5 @@
 package com.ecn.urbapp.utils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
-import android.app.FragmentManager;
-import android.content.Context;
-import android.database.Cursor;
-import android.net.Uri;
-import android.provider.MediaStore;
-import android.widget.Toast;
-
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.DataObject;
 import com.ecn.urbapp.db.Element;

@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import org.osmdroid.api.IMap;
+import org.osmdroid.api.Marker;
+import org.osmdroid.api.Polyline;
+import org.osmdroid.util.Position;
+import org.osmdroid.views.MapView;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -41,21 +47,7 @@ import com.ecn.urbapp.utils.ConvertGeom;
 import com.ecn.urbapp.utils.GetId;
 import com.ecn.urbapp.utils.MarkerPos;
 import com.example.osmurbapp.R;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesClient;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.location.LocationClient;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMarkerDragListener;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polygon;
-import com.google.android.gms.maps.model.PolygonOptions;
+
 
 
 /**
@@ -92,9 +84,9 @@ import com.google.android.gms.maps.model.PolygonOptions;
 	private Button validate = null;
 	
 	/**
-	 * The google map object
+	 * The Map
 	 */
-	private GoogleMap map = null;
+	private IMap map = null;
 	
 	/**
 	 * Contains the GPS position of the user
@@ -109,7 +101,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
 	/**
 	 * France GPS centered
 	 */
-	public static final LatLng defaultPos=new LatLng(46.52863469527167,2.00896484375);
+	public static final Position defaultPos=new Position(46.52863469527167,2.00896484375);
 	
 	/**
 	 * For the localisation of tablets
@@ -137,11 +129,11 @@ import com.google.android.gms.maps.model.PolygonOptions;
 	/**
 	* polygone/line option to display the selected area
 	*/
-	public Polygon polygon;
+	public Polyline polygon;
 	/**
 	* polygone/line options
 	*/
-	public PolygonOptions rectOptions;
+	/*public PolylineOptions rectOptions;*/
 	
 	/**
 	 * Defines all the colors for markers
@@ -293,7 +285,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
     		plan.setOnClickListener(toPlan);
     		hybrid.setOnClickListener(toHybrid);
     		validate.setOnClickListener(this);
-
+    		
     		//for reverse adresses
     		mActivityIndicator = (ProgressBar) findViewById(R.id.address_progress);
 
@@ -307,7 +299,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
     		int i=0;
     		for (GpsGeom gps:MainActivity.gpsGeom){
 
-    			for(LatLng point:ConvertGeom.gpsGeomToLatLng(gps)) {
+    			for(Position point:ConvertGeom.gpsGeomToLatLng(gps)) {
     				if(i<nbPoints){
     					Marker marker = map.addMarker(new MarkerOptions()
     					.position(point)
@@ -331,7 +323,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
      * @param pos
      * @param map
      */
-    public GeoActivity(Boolean needCurrentPos, LatLng pos, GoogleMap map){
+    public GeoActivity(Boolean needCurrentPos, Position pos, GoogleMap map){
     	if (servicesConnected()){
     		this.map = map;
     		this.needCurrentPos = needCurrentPos;
@@ -352,7 +344,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
      * @param pos
      * @param map
      */
-    public void geoActivityInit(Boolean needCurrentPos, LatLng pos, GoogleMap map){
+    public void geoActivityInit(Boolean needCurrentPos, Position pos, MapView map){
     	if (needCurrentPos) {
     		/*
     		 * Create a new location client, using the enclosing class to
@@ -451,7 +443,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
     	else if (NbPointsGeoDialog.selected == 1) {
     		
     		try {
-	    		ArrayList<LatLng> ll = new ArrayList<LatLng>();
+	    		ArrayList<Position> ll = new ArrayList<Position>();
 	    		for(Marker m : markers){
 	    			ll.add(m.getPosition());
 	    		}
@@ -489,7 +481,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
     		}
 	    		
 	    	try {
-	    		ArrayList<LatLng> ll = new ArrayList<LatLng>();
+	    		ArrayList<Position> ll = new ArrayList<Position>();
 	    		for(Marker m : markers){
 	    			ll.add(m.getPosition());
 	    		}
@@ -528,7 +520,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
             
         @SuppressWarnings("null")
 		@Override
-        public void onMapClick(LatLng point) {
+        public void onMapClick(Position point) {
             /**
              * We prevents to pu more than the max nb of markers
              */
@@ -590,10 +582,10 @@ import com.google.android.gms.maps.model.PolygonOptions;
 	         // Getting longitude of the current location
 	         double longitude = mLastLocalisation.getLongitude();
 	        
-	         // Creating a LatLng object for the current location
-	         LatLng latLng = new LatLng(latitude, longitude);
+	         // Creating a Position object for the current location
+	         Position latLng = new Position(latitude, longitude);
 	        
-	         map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+	         map.moveCamera(CameraUpdateFactory.newLatLngZoom(Position, 15));
 	         Toast.makeText(MainActivity.baseContext, "Position ok", Toast.LENGTH_LONG).show();
         }
         else {
@@ -696,7 +688,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
 		* Get a Geocoder instance, get the latitude and longitude
 		* look up the address, and return it
 		*
-		* @params params One or more Latlng objects
+		* @params params One or more Position objects
 		* @return A string containing the address of the current
 		* location, or an empty string if no address can be found,
 		* or an error message
@@ -706,7 +698,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
              Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
              // Get the current location from the input parameter list
              MarkerPos markpos = new MarkerPos(params[0]);
-             LatLng loc = markpos.getPosition();
+             Position loc = markpos.getPosition();
              // Create a list to contain the result address
              List<Address> addresses = null;
              try {
@@ -832,7 +824,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
      * @param position of the marker in the map
      * @return the marker itself
      */
-    public Marker addMarkersColored(int number, String title, LatLng position){
+    public Marker addMarkersColored(int number, String title, Position position){
     	
     	Bitmap.Config conf = Bitmap.Config.ARGB_8888;
     	Bitmap bmp = Bitmap.createBitmap(34, 41, conf);
@@ -871,7 +863,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
      * @param points
      * @param refresh for the refresh content or not (yes in that activity)
      */
-    public void drawPolygon(ArrayList<LatLng> points, Boolean refresh){
+    public void drawPolygon(ArrayList<Position> points, Boolean refresh){
     	if (points.size()>=2) {
     		
     		if (polygon!=null && refresh)
@@ -880,7 +872,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
             //Instantiates a new Polygon object and adds points to define a rectangle
             rectOptions = new PolygonOptions();
            
-            for (LatLng pt : points) {
+            for (Position pt : points) {
                     rectOptions = rectOptions.add(pt);
             }
             // Remove the Polygon if exists
@@ -897,7 +889,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
      * @param markers
      */
     public void markerToArray(ArrayList<Marker> markers){
-    	ArrayList<LatLng> points = new ArrayList<LatLng>();
+    	ArrayList<Position> points = new ArrayList<Position>();
         for (Marker mark:markers){
         	if(mark!=null){
         		points.add(mark.getPosition());

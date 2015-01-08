@@ -1,7 +1,5 @@
 package com.ecn.urbapp.db;
 
-import android.content.ContentValues;
-
 public class Material extends DataObject  {
 
 	
@@ -120,6 +118,7 @@ public class Material extends DataObject  {
 	
 	//Override Methods
 	@Override
+	@Override
 	public String toString() {
 		return "Material [material_id=" + material_id + ", material_name="
 				+ material_name + ", material_conduct=" + material_conduct
@@ -127,6 +126,7 @@ public class Material extends DataObject  {
 				+ ", material_mass_density=" + material_mass_density + "]";
 	}
 
+	@Override
 	@Override
 	public void saveToLocal(LocalDataSource datasource) {
 		ContentValues values = new ContentValues(); 

@@ -18,7 +18,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.osmurbapp.R;
 import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.LocalDataSource;
 import com.ecn.urbapp.db.Photo;
@@ -27,6 +26,7 @@ import com.ecn.urbapp.utils.CustomListViewAdapter;
 import com.ecn.urbapp.utils.MathOperation;
 import com.ecn.urbapp.utils.RowItem;
 import com.ecn.urbapp.utils.Utils;
+import com.example.osmurbapp.R;
 
 
 @SuppressLint("NewApi") public class LoadLocalPhotosActivity extends Activity{

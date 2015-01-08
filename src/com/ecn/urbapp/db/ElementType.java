@@ -1,7 +1,5 @@
 package com.ecn.urbapp.db;
 
-import android.content.ContentValues;
-
 public class ElementType extends DataObject {
 
 	
@@ -59,11 +57,13 @@ public class ElementType extends DataObject {
 	
 	//Override Methods
 	@Override
+	@Override
 	public String toString() {
 		return "ElementType [elementType_id=" + elementType_id
 				+ ", elementType_name=" + elementType_name + "]";
 	}
 
+	@Override
 	@Override
 	public void saveToLocal(LocalDataSource datasource) {
 		ContentValues values = new ContentValues(); 

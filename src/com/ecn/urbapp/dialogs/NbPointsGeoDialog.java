@@ -1,13 +1,5 @@
 package com.ecn.urbapp.dialogs;
 
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.GeoActivity;
 import com.ecn.urbapp.activities.MainActivity;
 

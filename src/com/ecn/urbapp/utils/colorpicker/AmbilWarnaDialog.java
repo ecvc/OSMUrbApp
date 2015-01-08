@@ -11,14 +11,6 @@ More information : http://code.google.com/p/android-color-picker/
 
 package com.ecn.urbapp.utils.colorpicker;
 
-import android.app.*;
-import android.content.*;
-import android.graphics.*;
-import android.view.*;
-import android.widget.*;
-
-import com.example.osmurbapp.R;
-
 /**
  * This class is used to create a number picker dialog
  * 

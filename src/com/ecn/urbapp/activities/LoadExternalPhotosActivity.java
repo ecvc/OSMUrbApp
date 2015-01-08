@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.osmdroid.api.Marker;
+import org.osmdroid.util.Position;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
@@ -26,8 +29,13 @@ import com.ecn.urbapp.utils.MathOperation;
 import com.ecn.urbapp.utils.RowItem;
 import com.ecn.urbapp.utils.Utils;
 import com.example.osmurbapp.R;
-import org.osmdroid.util.Position;
-import org.osmdroid.api.Marker;
+
+/*import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;*/
+
 
 /**
  * Selection of the photo in the current project from server

@@ -11,19 +11,6 @@ More information : http://code.google.com/p/android-color-picker/
 
 package com.ecn.urbapp.utils.colorpicker;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ComposeShader;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.Shader;
-import android.graphics.Shader.TileMode;
-import android.util.AttributeSet;
-import android.view.View;
-
 /**
  * This class is used to create a number picker dialog
  * 
