@@ -47,6 +47,10 @@ import com.ecn.urbapp.utils.ConvertGeom;
 import com.ecn.urbapp.utils.GetId;
 import com.ecn.urbapp.utils.MarkerPos;
 import com.example.osmurbapp.R;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.location.LocationClient;
 
 
 
@@ -323,7 +327,7 @@ import com.example.osmurbapp.R;
      * @param pos
      * @param map
      */
-    public GeoActivity(Boolean needCurrentPos, Position pos, GoogleMap map){
+    public GeoActivity(Boolean needCurrentPos, Position pos, IMap map){
     	if (servicesConnected()){
     		this.map = map;
     		this.needCurrentPos = needCurrentPos;

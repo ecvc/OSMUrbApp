@@ -45,6 +45,10 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e9536356b9044589c761f2ac2c260ea823056ca
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.PixelGeom;

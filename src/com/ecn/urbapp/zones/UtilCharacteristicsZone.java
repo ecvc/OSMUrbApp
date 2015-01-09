@@ -62,6 +62,7 @@ import com.vividsolutions.jts.geom.TopologyException;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
 
+
 /**
  * This class regroup some useful methods for operation on PixelGeoms and
  * Elements

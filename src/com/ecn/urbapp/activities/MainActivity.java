@@ -40,7 +40,6 @@ import com.ecn.urbapp.utils.ConnexionCheck;
 import com.ecn.urbapp.utils.Cst;
 import com.ecn.urbapp.utils.Utils;
 import com.example.osmurbapp.R;
-
 /**
  * @author	COHENDET Sébastien
  * 			DAVID Nicolas

@@ -46,11 +46,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.PixelGeom;
 import com.ecn.urbapp.fragments.CharacteristicsFragment;
+import com.ecn.urbapp.fragments.ZoneFragment;
 import com.ecn.urbapp.zones.UtilCharacteristicsZone;
 import com.example.osmurbapp.R;
+import com.vividsolutions.jts.io.ParseException;
+
 import com.vividsolutions.jts.io.ParseException;
 
 /**
