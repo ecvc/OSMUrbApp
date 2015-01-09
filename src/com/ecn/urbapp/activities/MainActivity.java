@@ -1,12 +1,15 @@
 package com.ecn.urbapp.activities;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;

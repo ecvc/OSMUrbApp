@@ -6,7 +6,6 @@ import java.util.Arrays;
 import org.osmdroid.util.Position;
 
 import android.graphics.Point;
-import android.net.ParseException;
 
 import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.PixelGeom;
@@ -15,6 +14,7 @@ import com.ecn.urbapp.zones.Zone;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.Polygon;
+import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
 
 public class ConvertGeom{
@@ -59,11 +59,9 @@ public class ConvertGeom{
 		return list;
 	}
 	
-<<<<<<< HEAD
-	public static String latLngToGpsGeom(ArrayList<Position> list){
-=======
+
 	public static String PositionToGpsGeom(ArrayList<Position> list){
->>>>>>> c95bdb4944817760086e9fb7ea10520690d902dd
+
 		String ret="LINESTRING(";
 		
 		String s="";
