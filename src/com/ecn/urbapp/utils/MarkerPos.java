@@ -1,9 +1,9 @@
 package com.ecn.urbapp.utils;
 
+import org.osmdroid.api.Marker;
 import org.osmdroid.util.Position;
 
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
+
 
 /**
 * Defines a mix of differents objects, needed for the Async method
@@ -24,9 +24,9 @@ public class MarkerPos {
         private String adresse="Adresse inconnue";
 
     	//TODO Adddescription for javadoc
-        public MarkerPos(Marker marker, Position position) {
+        public MarkerPos(org.osmdroid.api.Marker marker2, Position position) {
                 super();
-                this.marker = marker;
+                this.marker = marker2;
                 this.position = position;
         }
 

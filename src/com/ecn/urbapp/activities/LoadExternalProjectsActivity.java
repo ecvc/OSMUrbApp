@@ -20,14 +20,17 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.osmurbapp.R;
 import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.LocalDataSource;
 import com.ecn.urbapp.db.Project;
 import com.ecn.urbapp.syncToExt.Sync;
 import com.ecn.urbapp.utils.ConvertGeom;
 import com.ecn.urbapp.utils.MathOperation;
+import com.example.osmurbapp.R;
 /*import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
