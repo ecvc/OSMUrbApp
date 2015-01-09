@@ -134,9 +134,11 @@ import com.google.android.gms.location.LocationClient;
 	* polygone/line option to display the selected area
 	*/
 	public Polyline polygon;
+	
 	/**
 	* polygone/line options
 	*/
+	
 	/*public PolylineOptions rectOptions;*/
 	
 	/**
@@ -294,7 +296,7 @@ import com.google.android.gms.location.LocationClient;
     		mActivityIndicator = (ProgressBar) findViewById(R.id.address_progress);
 
     		// Get a handle to the Map Fragment
-    		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+    		map = (MapView) findViewById(R.id.map);
     		geoActivityInit(true, defaultPos, map);
 
     		map.setOnMapClickListener(ajoutPoints);
@@ -348,7 +350,7 @@ import com.google.android.gms.location.LocationClient;
      * @param pos
      * @param map
      */
-    public void geoActivityInit(Boolean needCurrentPos, Position pos, MapView map){
+    public void geoActivityInit(Boolean needCurrentPos, Position pos, IMap map){
     	if (needCurrentPos) {
     		/*
     		 * Create a new location client, using the enclosing class to
@@ -449,15 +451,16 @@ import com.google.android.gms.location.LocationClient;
     		try {
 	    		ArrayList<Position> ll = new ArrayList<Position>();
 	    		for(Marker m : markers){
-	    			ll.add(m.getPosition());
+	    			Position x=new Position(m.longitude,m.latitude);
+	    			ll.add(x);
 	    		}
 	    		GpsGeom gg = new GpsGeom();
-	    		gg.setGpsGeomCoord(ConvertGeom.latLngToGpsGeom(ll));
+	    		gg.setGpsGeomCoord(ConvertGeom.PositionToGpsGeom(ll));
 	    		gg.setGpsGeomId(GetId.GpsGeom());
 	    		/**
 	    		 * we need to save the address in the photo_adresse attribute
 	    		 */
-	    		MainActivity.photo.setPhoto_adresse(markers.get(markers.size()-1).getSnippet());
+	    		MainActivity.photo.setPhoto_adresse(markers.get(markers.size()-1).snippet);
 	    		if(MainActivity.gpsGeom.size()>=gg.getGpsGeomsId()){
 	    			MainActivity.gpsGeom.add((int)gg.getGpsGeomsId(), gg);
 	    		}
@@ -487,15 +490,16 @@ import com.google.android.gms.location.LocationClient;
 	    	try {
 	    		ArrayList<Position> ll = new ArrayList<Position>();
 	    		for(Marker m : markers){
-	    			ll.add(m.getPosition());
+	    			Position x=new Position(m.longitude,m.latitude);
+	    			ll.add(x);
 	    		}
 	    		GpsGeom gg = new GpsGeom();
-	    		gg.setGpsGeomCoord(ConvertGeom.latLngToGpsGeom(ll));
+	    		gg.setGpsGeomCoord(ConvertGeom.PositionToGpsGeom(ll));
 	    		gg.setGpsGeomId(GetId.GpsGeom());
 	    		/**
 	    		 * we need to save the address in the photo_adresse attribute
 	    		 */
-	    		MainActivity.photo.setPhoto_adresse(markers.get(markers.size()-1).getSnippet());
+	    		MainActivity.photo.setPhoto_adresse(markers.get(markers.size()-1).snippet);
 	    		if(MainActivity.gpsGeom.size()>=gg.getGpsGeomsId()){
 	    			MainActivity.gpsGeom.add((int)gg.getGpsGeomsId(), gg);
 	    		}
@@ -709,8 +713,8 @@ import com.google.android.gms.location.LocationClient;
                 /*
 				* Return 1 address.
 				*/
-                 addresses = geocoder.getFromLocation(loc.latitude,
-                         loc.longitude, 1);
+                 addresses = geocoder.getFromLocation(loc.getLatitude(),
+                         loc.getLongitude(), 1);
              } catch (IOException e1) {
              Log.e("LocationSampleActivity","IO Exception in getFromLocation()");
              e1.printStackTrace();
@@ -719,9 +723,9 @@ import com.google.android.gms.location.LocationClient;
              } catch (IllegalArgumentException e2) {
              // Error message to post in the log
              String errorString = "Illegal arguments " +
-                     Double.toString(loc.latitude) +
+                     Double.toString(loc.getLatitude()) +
                      " , " +
-                     Double.toString(loc.longitude) +
+                     Double.toString(loc.getLongitude()) +
                      " passed to address service";
              Log.e("LocationSampleActivity", errorString);
              e2.printStackTrace();
@@ -766,7 +770,7 @@ import com.google.android.gms.location.LocationClient;
 	         // Set activity indicator visibility to "gone"
 	         mActivityIndicator.setVisibility(View.GONE);
 	         // Register the results of the lookup.
-	         markpos.getMarker().setSnippet(markpos.getAdresse());
+	         markpos.getMarker().snippet(markpos.getAdresse());
 	         markpos.getMarker().showInfoWindow();
         
 	         markerToArray(markers);
@@ -896,7 +900,8 @@ import com.google.android.gms.location.LocationClient;
     	ArrayList<Position> points = new ArrayList<Position>();
         for (Marker mark:markers){
         	if(mark!=null){
-        		points.add(mark.getPosition());
+        		Position x=new Position(mark.latitude,mark.longitude);
+        		points.add(x);
         	}
         }
         

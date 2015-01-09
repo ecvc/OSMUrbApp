@@ -1,6 +1,6 @@
 package com.ecn.urbapp.activities;
 
-<<<<<<< HEAD
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,12 +21,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-<<<<<<< HEAD
-=======
->>>>>>> 836be6312f0d467583070c89a3c2c586034c1726
-=======
+
 import com.example.osmurbapp.R;
->>>>>>> parent of 1090ebe... commit avant merge
 import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.LocalDataSource;
 import com.ecn.urbapp.db.Project;

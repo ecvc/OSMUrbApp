@@ -2,7 +2,6 @@ package com.ecn.urbapp.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import org.osmdroid.util.Position;
 
@@ -12,7 +11,6 @@ import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.PixelGeom;
 import com.ecn.urbapp.zones.UtilCharacteristicsZone;
 import com.ecn.urbapp.zones.Zone;
-import com.google.android.gms.maps.model.LatLng;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.Polygon;
