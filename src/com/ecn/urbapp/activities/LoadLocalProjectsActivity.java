@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.osmdroid.api.Marker;
+import org.osmdroid.util.Position;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -106,7 +107,7 @@ import com.example.osmurbapp.R;
    				Intent i = new Intent(getApplicationContext(), LoadLocalPhotosActivity.class);
    				i.putExtra("SELECTED_PROJECT_ID", refreshedValues.get(projectMarkers.get(marker.getId())).getProjectId());
    				
-   				ArrayList<LatLng> coordProjet = new ArrayList<LatLng>();
+   				ArrayList<Position> coordProjet = new ArrayList<Position>();
 
    					for(GpsGeom gg : allGpsGeom){
    		        		if(refreshedValues.get(projectMarkers.get(marker.getId())).getGpsGeom_id()==gg.getGpsGeomsId()){
@@ -166,7 +167,7 @@ import com.example.osmurbapp.R;
          */
         Integer i = Integer.valueOf(0);
         for (Project enCours:refreshedValues){
-			LatLng coordProjet = null;
+			Position coordProjet = null;
         	for(GpsGeom gg : allGpsGeom){
         		if(enCours.getGpsGeom_id()==gg.getGpsGeomsId()){
         			coordProjet =  MathOperation.barycenter(ConvertGeom.gpsGeomToLatLng(gg));

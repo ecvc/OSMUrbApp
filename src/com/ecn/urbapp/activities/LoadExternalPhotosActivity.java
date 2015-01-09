@@ -146,7 +146,7 @@ import com.google.android.gms.maps.model.Marker;*/
 			public void onInfoWindowClick(Marker marker) {
 				
 				for (Photo actualPhoto:Sync.refreshedValuesPhoto) {
-					if ((int)actualPhoto.getPhoto_id() == photosMarkers.get(marker.getId()))
+					if ((int)actualPhoto.getPhoto_id() == photosMarkers.get(marker.title))
 						MainActivity.photo = actualPhoto;
 				}
 
@@ -227,7 +227,7 @@ import com.google.android.gms.maps.model.Marker;*/
 			
 			displayedMap.drawPolygon(photoGPS, false);
 
-			photosMarkers.put(marker.getId(), (int) enCours.getPhoto_id());
+			photosMarkers.put(marker.title, (int) enCours.getPhoto_id());
 			i++;
 		}
 	}    
