@@ -21,19 +21,19 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 =======
 >>>>>>> 836be6312f0d467583070c89a3c2c586034c1726
+=======
+import com.example.osmurbapp.R;
+>>>>>>> parent of 1090ebe... commit avant merge
 import com.ecn.urbapp.db.GpsGeom;
 import com.ecn.urbapp.db.LocalDataSource;
 import com.ecn.urbapp.db.Project;
 import com.ecn.urbapp.syncToExt.Sync;
 import com.ecn.urbapp.utils.ConvertGeom;
 import com.ecn.urbapp.utils.MathOperation;
-import com.example.osmurbapp.R;
 /*import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
