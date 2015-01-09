@@ -1,16 +1,7 @@
 package com.ecn.urbapp.utils;
 
+import org.osmdroid.api.Marker;
 import org.osmdroid.util.Position;
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 836be6312f0d467583070c89a3c2c586034c1726
-=======
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
->>>>>>> parent of 1090ebe... commit avant merge
 
 /**
 * Defines a mix of differents objects, needed for the Async method
