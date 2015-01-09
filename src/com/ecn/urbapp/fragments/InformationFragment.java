@@ -15,11 +15,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 
-import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.db.Composed;
 import com.ecn.urbapp.db.Project;
 import com.ecn.urbapp.dialogs.NbPointsGeoDialog;
+import com.example.osmurbapp.R;
 /**
  * @author	COHENDET Sébastien
  * 			DAVID Nicolas

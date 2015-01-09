@@ -3,12 +3,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +17,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.Toast;
 
-import com.example.osmurbapp.R;
 import com.ecn.urbapp.db.Composed;
 import com.ecn.urbapp.db.Element;
 import com.ecn.urbapp.db.ElementType;
@@ -39,6 +36,7 @@ import com.ecn.urbapp.syncToExt.Sync;
 import com.ecn.urbapp.utils.ConnexionCheck;
 import com.ecn.urbapp.utils.Cst;
 import com.ecn.urbapp.utils.Utils;
+import com.example.osmurbapp.R;
 
 /**
  * @author	COHENDET Sébastien
@@ -223,13 +221,13 @@ import com.ecn.urbapp.utils.Utils;
 		datasource.open();
 		datasource.getAllElementType();
 		datasource.getAllMaterial();
-		if (this.elementType.isEmpty()||this.material.isEmpty()){
+		if (MainActivity.elementType.isEmpty()||MainActivity.material.isEmpty()){
 			Sync s = new Sync();
 			s.getTypeAndMaterialsFromExt();
-			for (ElementType elmtT : this.elementType){
+			for (ElementType elmtT : MainActivity.elementType){
 				elmtT.saveToLocal(MainActivity.datasource);
 			}
-			for (Material elmtT : this.material){
+			for (Material elmtT : MainActivity.material){
 				elmtT.saveToLocal(MainActivity.datasource);
 			}
 		}
@@ -316,7 +314,7 @@ import com.ecn.urbapp.utils.Utils;
 					}
 				break;
 				case Cst.CODE_LOAD_EXTERNAL_PROJECT:
-					ArrayList<Project> project = this.project;
+					ArrayList<Project> project = MainActivity.project;
 					
 					datasource.instanciateAllElement();
 					datasource.instanciateAllGpsGeom();
@@ -327,29 +325,29 @@ import com.ecn.urbapp.utils.Utils;
 					ArrayList<GpsGeom> gpsGeom = Sync.allGpsGeom;
 					//ArrayList<Project> project = Sync.refreshedValues;
 					ArrayList<PixelGeom> pixelGeom = Sync.allPixelGeom;
-					this.composed = Sync.allComposed;
+					MainActivity.composed = Sync.allComposed;
 
 					for(Element e : element){
-						if(Utils.getElementById(this.element, e.getElement_id()) != null)
+						if(Utils.getElementById(MainActivity.element, e.getElement_id()) != null)
 							e.setRegistredInLocal(true);
 					}
 					for(GpsGeom g : gpsGeom){
-						if(Utils.getElementById(this.gpsGeom, g.getGpsGeomsId()) != null)
+						if(Utils.getElementById(MainActivity.gpsGeom, g.getGpsGeomsId()) != null)
 							g.setRegistredInLocal(true);
 					}
 					for(Project p : project){
-						if(Utils.getElementById(this.project, p.getProjectId()) != null)
+						if(Utils.getElementById(MainActivity.project, p.getProjectId()) != null)
 							p.setRegistredInLocal(true);
 					}
 					for(PixelGeom p : pixelGeom){
-						if(Utils.getElementById(this.pixelGeom, p.getPixelGeomId()) != null)
+						if(Utils.getElementById(MainActivity.pixelGeom, p.getPixelGeomId()) != null)
 							p.setRegistredInLocal(true);
 					}
 
-					this.element=element;
-					this.gpsGeom=gpsGeom;
-					this.project=project;
-					this.pixelGeom=pixelGeom;
+					MainActivity.element=element;
+					MainActivity.gpsGeom=gpsGeom;
+					MainActivity.project=project;
+					MainActivity.pixelGeom=pixelGeom;
 
 					MainActivity.photo.setRegistredInLocal(true);
 					MainActivity.photo.setUrlTemp(null);

@@ -1,7 +1,5 @@
 package com.ecn.urbapp.db;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import android.content.ContentValues;

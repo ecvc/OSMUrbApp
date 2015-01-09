@@ -44,9 +44,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.example.osmurbapp.R;
 import com.ecn.urbapp.activities.MainActivity;
 import com.ecn.urbapp.fragments.ZoneFragment;
+import com.example.osmurbapp.R;
 
 /**
  * This class creates the dialog that indicate which pixelgeoms is not defined

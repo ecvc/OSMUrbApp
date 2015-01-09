@@ -3,7 +3,10 @@ package com.ecn.urbapp.utils;
 import org.osmdroid.api.Marker;
 import org.osmdroid.util.Position;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 836be6312f0d467583070c89a3c2c586034c1726
 
 /**
 * Defines a mix of differents objects, needed for the Async method

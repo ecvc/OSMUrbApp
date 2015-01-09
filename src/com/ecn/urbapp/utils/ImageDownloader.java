@@ -1,11 +1,8 @@
 package com.ecn.urbapp.utils;
 
 import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 
@@ -14,9 +11,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpGet;
 
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.CompressFormat;
-import android.graphics.BitmapFactory;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -40,7 +34,7 @@ public class ImageDownloader {
 	 * @return path of image
 	 */
     public String download(String url, String name) {
-    		this.name=name;
+    		ImageDownloader.name=name;
             BitmapDownloaderTask task = new BitmapDownloaderTask();
             
             //check if file already exists. If so, displays it !

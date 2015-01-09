@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import org.osmdroid.api.IMap;
+import org.osmdroid.api.Marker;
+import org.osmdroid.api.Polyline;
+import org.osmdroid.util.Position;
+import org.osmdroid.views.MapView;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -41,29 +47,6 @@ import com.ecn.urbapp.utils.ConvertGeom;
 import com.ecn.urbapp.utils.GetId;
 import com.ecn.urbapp.utils.MarkerPos;
 import com.example.osmurbapp.R;
-
-import org.osmdroid.api.IMap;
-import org.osmdroid.api.Marker;
-import org.osmdroid.api.Polyline;
-import org.osmdroid.util.Position;
-import org.osmdroid.views.MapView;
-import org.osmdroid.views.MapController;
-import org.osmdroid.*;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesClient;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.location.LocationClient;
-/*import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMarkerDragListener;
-import org.osmdroid.*;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polygon;
-import com.google.android.gms.maps.modehttps://github.com/osmdroid/osmdroid.gitl.PolygonOptions;*/
 
 
 

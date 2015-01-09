@@ -463,7 +463,7 @@ public class Sync
 			    	
 			        } catch (JSONException e) {
 			           Log.e("JSON Parser", "Error parsing data " + e.toString());
-			           return (HashMap<String, Integer>) null;
+			           return null;
 			        }  
 		}
 	 

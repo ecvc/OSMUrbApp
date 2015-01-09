@@ -21,7 +21,7 @@ public class GpsGeom extends DataObject{
 	 */
 	private String gpsGeom_the_geom;
 	/**
-	 * Field containing the addressof the GpsGeom.
+	 * Field containing the address of the GpsGeom.
 	 */
 	private String gpsGeom_address;
 

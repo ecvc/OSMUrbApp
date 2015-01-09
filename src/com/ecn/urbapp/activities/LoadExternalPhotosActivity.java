@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.osmdroid.api.Marker;
+import org.osmdroid.util.Position;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -28,11 +29,13 @@ import com.ecn.urbapp.utils.MathOperation;
 import com.ecn.urbapp.utils.RowItem;
 import com.ecn.urbapp.utils.Utils;
 import com.example.osmurbapp.R;
+
 /*import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;*/
+
 
 /**
  * Selection of the photo in the current project from server
@@ -206,7 +209,7 @@ import com.google.android.gms.maps.model.Marker;*/
 		for (Photo enCours:refreshedValues){
 			
 			//TODO request for GPSGeom
-			ArrayList<LatLng> photoGPS = null;
+			ArrayList<Position> photoGPS = null;
 			for(GpsGeom gg : allGpsGeom){
 				if(gg.getGpsGeomsId()==enCours.getGpsGeom_id()){
 					photoGPS = ConvertGeom.gpsGeomToLatLng(gg);
@@ -214,7 +217,7 @@ import com.google.android.gms.maps.model.Marker;*/
 			}
 			//end of fake photoGPS values
 			
-			LatLng GPSCentered = MathOperation.barycenter(photoGPS);
+			Position GPSCentered = MathOperation.barycenter(photoGPS);
 					
 			Marker marker = displayedMap.addMarkersColored(i, "Cliquez ici pour valider cette photo", GPSCentered);
 			
@@ -240,14 +243,14 @@ import com.google.android.gms.maps.model.Marker;*/
 
 
 			List<com.ecn.urbapp.db.GpsGeom> allGpsGeom = Sync.allGpsGeom;
-			ArrayList<LatLng> photoGPS = null;
+			ArrayList<Position> photoGPS = null;
 			for(GpsGeom gg : allGpsGeom){
 				if(gg.getGpsGeomsId()==refreshedValues.get(position).getGpsGeom_id()){
 					photoGPS = ConvertGeom.gpsGeomToLatLng(gg);
 				}
 			}
 
-			LatLng GPSCentered = MathOperation.barycenter(photoGPS);
+			Position GPSCentered = MathOperation.barycenter(photoGPS);
 			displayedMap = new GeoActivity(false, GPSCentered, map);
 		}
 	};

@@ -2,10 +2,10 @@ package com.ecn.urbapp.db;
 
 import java.util.Vector;
 
-import com.ecn.urbapp.syncToExt.Sync;
-
 import android.content.ContentValues;
 import android.database.Cursor;
+
+import com.ecn.urbapp.syncToExt.Sync;
 
 public class Element extends DataObject {
 

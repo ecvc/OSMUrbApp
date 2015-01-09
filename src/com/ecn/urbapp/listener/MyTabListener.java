@@ -2,7 +2,6 @@ package com.ecn.urbapp.listener;
 
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.widget.Toast;
