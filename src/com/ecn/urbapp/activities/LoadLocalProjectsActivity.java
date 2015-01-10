@@ -192,7 +192,7 @@ import com.example.osmurbapp.R;
     {
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View v, int position, long id) {
-			LatLng coordProjet = null;
+			Position coordProjet = null;
         	List<GpsGeom> allGpsGeom = recupGpsGeom();
         	for(GpsGeom gg : allGpsGeom){
         		if(refreshedValues.get(position).getGpsGeom_id()==gg.getGpsGeomsId()){
