@@ -103,14 +103,14 @@ import com.example.osmurbapp.R;
         map.setOnInfoWindowClickListener(new OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-               Toast.makeText(MainActivity.baseContext, refreshedValues.get(projectMarkers.get(marker.getId())).toString(), Toast.LENGTH_LONG).show();
+               Toast.makeText(MainActivity.baseContext, refreshedValues.get(projectMarkers.get(marker.title)).toString(), Toast.LENGTH_LONG).show();
    				Intent i = new Intent(getApplicationContext(), LoadLocalPhotosActivity.class);
-   				i.putExtra("SELECTED_PROJECT_ID", refreshedValues.get(projectMarkers.get(marker.getId())).getProjectId());
+   				i.putExtra("SELECTED_PROJECT_ID", refreshedValues.get(projectMarkers.get(marker.title)).getProjectId());
    				
    				ArrayList<Position> coordProjet = new ArrayList<Position>();
 
    					for(GpsGeom gg : allGpsGeom){
-   		        		if(refreshedValues.get(projectMarkers.get(marker.getId())).getGpsGeom_id()==gg.getGpsGeomsId()){
+   		        		if(refreshedValues.get(projectMarkers.get(marker.title)).getGpsGeom_id()==gg.getGpsGeomsId()){
    		        			coordProjet.addAll(ConvertGeom.gpsGeomToLatLng(gg));
    		        		}
    					}
@@ -176,7 +176,7 @@ import com.example.osmurbapp.R;
         	
         	Marker marker = displayedMap.addMarkersColored(i, "Cliquez ici pour charger le projet", coordProjet);
             
-        	projectMarkers.put(marker.getId(), i);
+        	projectMarkers.put(marker.title, i);
         	toList.add(i+" - "+enCours.getProjectName());
         	i++;
         }

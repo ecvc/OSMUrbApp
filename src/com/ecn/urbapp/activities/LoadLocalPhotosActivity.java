@@ -124,10 +124,10 @@ import com.example.osmurbapp.R;
 			public void onInfoWindowClick(Marker marker) {
 				Toast.makeText(MainActivity.baseContext, "Chargement de la photo", Toast.LENGTH_SHORT).show();				
 				//TODO Sebastien has to make it more readable
-				MainActivity.datasource.instanciatePhoto(refreshedValues.get(photosMarkers.get(marker.getId())).getPhoto_id());
+				MainActivity.datasource.instanciatePhoto(refreshedValues.get(photosMarkers.get(marker.title)).getPhoto_id());
 				
 				//TODO do a better way to have the path !
-				MainActivity.photo.setUrlTemp(Environment.getExternalStorageDirectory()+"/featureapp/"+refreshedValues.get(photosMarkers.get(marker.getId())).getPhoto_url());
+				MainActivity.photo.setUrlTemp(Environment.getExternalStorageDirectory()+"/featureapp/"+refreshedValues.get(photosMarkers.get(marker.title)).getPhoto_url());
 				
 				setResult(RESULT_OK);
 				finish();
@@ -218,7 +218,7 @@ import com.example.osmurbapp.R;
 			
 			displayedMap.drawPolygon(photoGPS, false);
 
-			photosMarkers.put(marker.getId(), i);
+			photosMarkers.put(marker.title, i);
 			i++;
 		}
 	}    
