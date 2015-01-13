@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.osmdroid.api.Marker;
 import org.osmdroid.util.Position;
+import org.osmdroid.views.MapView;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -53,7 +54,7 @@ import com.example.osmurbapp.R;
     /**
      * The google map object
      */
-    private GoogleMap map = null;
+    private MapView map = null;
     /**
      * The instance of GeoActivity for map activity
      */

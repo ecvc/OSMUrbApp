@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.osmdroid.api.Marker;
 import org.osmdroid.util.Position;
+import org.osmdroid.views.MapView;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -59,7 +60,7 @@ import com.google.android.gms.maps.model.Marker;*/
 	/**
 	 * The google map object
 	 */
-	private GoogleMap map;
+	private MapView map;
 	/**
 	 * The instance of  for map activity
 	 */

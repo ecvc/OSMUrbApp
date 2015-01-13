@@ -8,6 +8,8 @@ import java.util.Locale;
 import org.osmdroid.api.IMap;
 import org.osmdroid.api.Marker;
 import org.osmdroid.api.Polyline;
+import org.osmdroid.bonuspack.overlays.Marker.OnMarkerDragListener;
+import org.osmdroid.bonuspack.overlays.Polygon;
 import org.osmdroid.util.Position;
 import org.osmdroid.views.MapView;
 
@@ -47,6 +49,9 @@ import com.ecn.urbapp.utils.ConvertGeom;
 import com.ecn.urbapp.utils.GetId;
 import com.ecn.urbapp.utils.MarkerPos;
 import com.example.osmurbapp.R;
+
+import org.osmdroid.views.overlay.mylocation.IMyLocationProvider;
+import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -90,7 +95,7 @@ import com.google.android.gms.location.LocationClient;
 	/**
 	 * The Map
 	 */
-	private IMap map = null;
+	private MapView map = null;
 	
 	/**
 	 * Contains the GPS position of the user
@@ -133,7 +138,7 @@ import com.google.android.gms.location.LocationClient;
 	/**
 	* polygone/line option to display the selected area
 	*/
-	public Polyline polygon;
+	public Polygon polygon;
 	
 	/**
 	* polygone/line options
@@ -327,13 +332,13 @@ import com.google.android.gms.location.LocationClient;
      * Constructor of GeoActivity (needed in case of extern implementation)
      * @param needCurrentPos
      * @param pos
-     * @param map
+     * @param map2
      */
-    public GeoActivity(Boolean needCurrentPos, Position pos, IMap map){
+    public GeoActivity(Boolean needCurrentPos, Position pos, MapView map2){
     	if (servicesConnected()){
-    		this.map = map;
+    		this.map = map2;
     		this.needCurrentPos = needCurrentPos;
-    		geoActivityInit(needCurrentPos, pos, map);
+    		geoActivityInit(needCurrentPos, pos, map2);
     	}
     }
     
@@ -348,9 +353,9 @@ import com.google.android.gms.location.LocationClient;
      * 
      * @param needCurrentPos
      * @param pos
-     * @param map
+     * @param map2
      */
-    public void geoActivityInit(Boolean needCurrentPos, Position pos, IMap map){
+    public void geoActivityInit(Boolean needCurrentPos, Position pos, MapView map2){
     	if (needCurrentPos) {
     		/*
     		 * Create a new location client, using the enclosing class to
@@ -365,12 +370,13 @@ import com.google.android.gms.location.LocationClient;
     	}
 
     	//check
-    	map.setMyLocationEnabled(true);
+    	
+    	map2.enableMyLocation();
     	
     	if (pos == defaultPos)
-    		map.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 6));
+    		map2.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 6));
     	else
-    		map.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 16));
+    		map2.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 16));
     }
     
     /**
@@ -405,7 +411,7 @@ import com.google.android.gms.location.LocationClient;
 
          // Other supported types include: MAP_TYPE_NORMAL,
         	// MAP_TYPE_TERRAIN, MAP_TYPE_HYBRID and MAP_TYPE_NONE
-        	map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        	map.setMapType(MapView.MAP_TYPE_SATELLITE);
         	Toast.makeText(MainActivity.baseContext, "Passage à la carte Satellite", Toast.LENGTH_SHORT).show();
                     
         }
@@ -419,7 +425,7 @@ import com.google.android.gms.location.LocationClient;
         @Override
         public void onClick(View v) {
 
-	         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+	         map.setMapType(MapView.MAP_TYPE_NORMAL);
 	         Toast.makeText(MainActivity.baseContext, "Passage à la carte Plan", Toast.LENGTH_SHORT).show();
         }
     };
@@ -432,7 +438,7 @@ import com.google.android.gms.location.LocationClient;
         @Override
         public void onClick(View v) {
 
-	         map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+	         map.setMapType(MapView.MAP_TYPE_HYBRID);
 	         Toast.makeText(MainActivity.baseContext, "Passage à la carte Hybride", Toast.LENGTH_SHORT).show();
         }
     };
@@ -814,7 +820,8 @@ import com.google.android.gms.location.LocationClient;
         
         @Override
         public void onMarkerDragEnd(Marker marker) {
-            MarkerPos markpos = new MarkerPos(marker, marker.getPosition());
+        	Position a = new Position(marker.longitude,marker.latitude);
+            MarkerPos markpos = new MarkerPos(marker, a);
             getAddress(markpos);                        
         }
         
